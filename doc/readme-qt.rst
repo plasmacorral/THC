@@ -12,20 +12,7 @@ distribution are installed, for Debian and Ubuntu these are:
 
 ::
 
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install python
-sudo apt-get install git
-sudo apt-get install openssl
-sudo apt-get install qt4-qmake
-sudo apt-get install libqt4-dev
-sudo apt-get install build-essential
-sudo apt-get install libssl-dev
-sudo apt-get install libdb++-dev
-sudo apt-get install libdb-dev
-sudo apt-get install libboost-all-dev
-sudo apt-get install libminiupnpc-dev
-sudo apt-get install libqrencode-dev
+sudo apt-get update && sudo apt-get upgrade && sudo apt-get install python && sudo apt-get install git  && sudo apt-get install openssl && sudo apt-get install qt4-qmake && sudo apt-get install libqt4-dev &&  sudo apt-get install build-essential && sudo apt-get install libssl-dev && sudo apt-get install libdb++-dev && sudo apt-get install libdb-dev && sudo apt-get install libboost-all-dev && sudo apt-get install libminiupnpc-dev && sudo apt-get install libqrencode-dev
 
 then execute the following:
 
