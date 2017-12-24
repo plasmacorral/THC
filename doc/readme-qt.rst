@@ -4,48 +4,39 @@ Bitcoin-qt: Qt4 GUI for Bitcoin
 Build instructions
 ===================
 
-Debian
+Ubuntu/Debian
 -------
 
-First, make sure that the required packages for Qt4 development of your
-distribution are installed, for Debian and Ubuntu these are:
-
+First, make sure that the required packages are installed, for Debian and Ubuntu these are:
 ::
+	sudo apt install python git build-essential libssl-dev libboost-all-dev
+	
+Either use Qt 5 (recommended)
+::
+	sudo apt install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools
+	
+Or Qt 4 (deprecated, not tested against)
+::
+	sudo apt install qt4-qmake libqt4-dev
+To preserve compatibility with wallet, you need to have BerkeleyDB 4.8 installed. On Ubutnu you can get it from Bitcoin PPA
+::
+	sudo apt install software-properties-common
+	sudo add-apt-repository ppa:bitcoin/bitcoin
+	sudo apt update
+	sudo apt install libdb4.8-dev libdb4.8++-dev
 
-sudo apt-get update && sudo apt-get upgrade && sudo apt-get install python && sudo apt-get install git  && sudo apt-get install openssl && sudo apt-get install qt4-qmake && sudo apt-get install libqt4-dev &&  sudo apt-get install build-essential && sudo apt-get install libssl-dev && sudo apt-get install libdb++-dev && sudo apt-get install libdb-dev && sudo apt-get install libboost-all-dev && sudo apt-get install libminiupnpc-dev && sudo apt-get install libqrencode-dev
+You can also get miniupnpc and qrencode, if you want this functionality:
+::
+	sudo apt install libminiupnpc-dev libqrencode-dev
 
 then execute the following:
-
 ::
-    cd ~
-    git clone https://github.com/hempcoin-project/THC.git THC
-    cd THC
-    qmake
-    make
-    ./hempcoin-qt
+	git clone https://github.com/hempcoin-project/THC.git
+	cd THC
+	qmake
+	make
 
-
-An executable named `hempcoin-qt` will be built. On first launch, a database error may occur.  Until that is fixed, just let it 
-error out and on second attempt should run.
-
-Windows
---------
-
-Windows build instructions:
-
-- Download the `QT Windows SDK`_ and install it. You don't need the Symbian stuff, just the desktop Qt.
-
-- Download and extract the `dependencies archive`_  [#]_, or compile openssl, boost and dbcxx yourself.
-
-- Copy the contents of the folder "deps" to "X:\\QtSDK\\mingw", replace X:\\ with the location where you installed the Qt SDK. Make sure that the contents of "deps\\include" end up in the current "include" directory.
-
-- Open the .pro file in QT creator and build as normal (ctrl-B)
-
-.. _`QT Windows SDK`: http://qt.nokia.com/downloads/sdk-windows-cpp
-.. _`dependencies archive`: https://download.visucore.com/bitcoin/qtgui_deps_1.zip
-.. [#] PGP signature: https://download.visucore.com/bitcoin/qtgui_deps_1.zip.sig (signed with RSA key ID `610945D0`_)
-.. _`610945D0`: http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x610945D0
-
+An executable named `hempcoin-qt` will be built
 
 Mac OS X
 --------
