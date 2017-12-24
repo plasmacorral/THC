@@ -12,21 +12,34 @@ distribution are installed, for Debian and Ubuntu these are:
 
 ::
 
-    apt-get install qt4-qmake libqt4-dev build-essential libboost-dev libboost-system-dev \
-        libboost-filesystem-dev libboost-program-options-dev libboost-thread-dev \
-        libssl-dev libdb4.8++-dev
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install python
+sudo apt-get install git
+sudo apt-get install openssl
+sudo apt-get install qt4-qmake
+sudo apt-get install libqt4-dev
+sudo apt-get install build-essential
+sudo apt-get install libssl-dev
+sudo apt-get install libdb++-dev
+sudo apt-get install libdb-dev
+sudo apt-get install libboost-all-dev
+sudo apt-get install libminiupnpc-dev
+sudo apt-get install libqrencode-dev
 
 then execute the following:
 
 ::
-
+    cd ~
+    git clone https://github.com/hempcoin-project/THC.git THC
+    cd THC
     qmake
     make
+    ./hempcoin-qt
 
-Alternatively, install Qt Creator and open the `bitcoin-qt.pro` file.
 
-An executable named `bitcoin-qt` will be built.
-
+An executable named `hempcoin-qt` will be built. On first launch, a database error may occur.  Until that is fixed, just let it 
+error out and on second attempt should run.
 
 Windows
 --------
